@@ -12,14 +12,6 @@ class ItemPicker extends React.Component {
         }
     }
 
-        /* getPrice(itemName) {
-            console.log('itemname : ', itemName)
-            console.log('itemList  : ', this.props.itemList)
-            this.props.itemList.filter((elem) => {
-                return elem.item == itemName
-            })
-        }
- */
     handleChange = (event) => {
         //console.log('change occured ', event.target.name, event.target.value)
         this.setState({
@@ -32,11 +24,11 @@ class ItemPicker extends React.Component {
     itemAdded = (event) => {
         let bundle = {}
         console.log(this.state.item, this.state.qty)
-        bundle['item'] = this.state.item
-        bundle['qty'] = this.state.qty
+        bundle['item']  = this.state.item
+        bundle['qty']   = this.state.qty
         bundle['price'] = this.props.itemList.filter((elem) => {
                             return elem.item == this.state.item
-                        })[0]['price']
+                         })[0]['price']
 
         let _picked = this.state.picked
         _picked.push(bundle)

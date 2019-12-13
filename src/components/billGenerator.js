@@ -14,7 +14,13 @@ class BillGenerator extends React.Component {
                      ]
 
         this.state = {
-            purchasedItems : []
+            purchasedItems : [], 
+            taxDiscount : {
+                            gst : 0,
+                            otherTax : 0,
+                            discount : 0,
+                            otherDiscount : 0
+            }
         }
     }
 
@@ -25,6 +31,15 @@ class BillGenerator extends React.Component {
         //console.log('items form there : ', items)
         console.log('purchsed items, billGen : ', this.state.purchasedItems )
     }
+
+    handleTaxDiscountValues = (items) => {
+        this.setState({
+            taxDiscount : items
+        })
+
+        console.log('discount value : ', this.state.taxDiscount)
+    }
+
 
     render() {
         //console.log(this.items)
@@ -40,18 +55,18 @@ class BillGenerator extends React.Component {
                         <ItemPicker itemList = {this.items} callbackPurchasedItems = {this.handlePurchasedItems}/>
                     </div>
                     <div className = 'col-5'>
-                        <Taxes/>
+                        <Taxes taxDiscount = {this.taxDiscount} callbackHandleTaxDiscountValues = {this.handleTaxDiscountValues}/>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col'>
-                        <CashMemo purchasedItems = {this.state.purchasedItems}/>
+                        <CashMemo purchasedItems = {this.state.purchasedItems} 
+                                           taxDiscount = {this.state.taxDiscount} />
                     </div>
                 </div>
             </div>
         )
     }
-
 }
 
 export default BillGenerator
