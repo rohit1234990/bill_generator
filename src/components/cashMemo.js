@@ -3,9 +3,12 @@ import React from 'react'
 class CashMemo extends React.Component {
     constructor(props) {
         super(props)
+        
+        
     }
 
     render() {
+        console.log('cash memo : ', this.props.purchasedItems)
         return (
             <div className='container'>
                 <div className='row'>
@@ -23,7 +26,14 @@ class CashMemo extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-
+                                {this.props.purchasedItems.map((item) => {
+                                    return <tr>
+                                        <td>{item.item}</td>
+                                        <td>{item.qty}</td>
+                                        <td>{item.price}</td>
+                                        <td>{item.qty * item.price}</td>
+                                    </tr>
+                                })}
                             </tbody>
                         </table>
                     </div>

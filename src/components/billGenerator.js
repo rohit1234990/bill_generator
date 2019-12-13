@@ -14,12 +14,20 @@ class BillGenerator extends React.Component {
                      ]
 
         this.state = {
-
+            purchasedItems : []
         }
     }
 
+    handlePurchasedItems = (items) => {
+        this.setState({
+            purchasedItems : items
+        })
+        //console.log('items form there : ', items)
+        console.log('purchsed items, billGen : ', this.state.purchasedItems )
+    }
+
     render() {
-        console.log(this.items)
+        //console.log(this.items)
         return (
             <div className='container'>
                 <div className='row'>
@@ -29,14 +37,16 @@ class BillGenerator extends React.Component {
                 </div>
                 <div className='row'>
                     <div className='col-7'>
-                        <ItemPicker itemList = {this.items}/>
+                        <ItemPicker itemList = {this.items} callbackPurchasedItems = {this.handlePurchasedItems}/>
                     </div>
                     <div className = 'col-5'>
                         <Taxes/>
                     </div>
                 </div>
                 <div className='row'>
-                    <CashMemo />
+                    <div className='col'>
+                        <CashMemo purchasedItems = {this.state.purchasedItems}/>
+                    </div>
                 </div>
             </div>
         )
