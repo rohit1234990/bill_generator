@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemPicker from './itemPicker'
 import Taxes from './taxes'
+import CashMemo from './cashMemo'
 
 class BillGenerator extends React.Component {
     constructor(props) {
@@ -33,6 +34,9 @@ class BillGenerator extends React.Component {
                     <div className = 'col-5'>
                         <Taxes/>
                     </div>
+                </div>
+                <div className='row'>
+                    <CashMemo />
                 </div>
             </div>
         )
