@@ -1,4 +1,5 @@
 import React from 'react'
+import { thisExpression } from '@babel/types'
 
 class Taxes extends React.Component {
     constructor(props) {
@@ -20,6 +21,15 @@ class Taxes extends React.Component {
     }
 
     handleClick = (event) => {
+        /* console.log('currvalue : ', this.state)
+            this.setState({
+            gst : this.state.gst == undefined ? 0 : this.state.gst,
+            otherTax : this.state.otherTax == undefined ? 0 : this.state.otherTax,
+            discount : this.state.discount == undefined ? 0 : this.state.discount,
+            otherDiscount : this.state.otherDiscount == undefined ? 0 : this.state.otherDiscount
+        }) 
+        console.log('currvalue Post: ', this.state)
+        */
         this.props.callbackHandleTaxDiscountValues(this.state)
     }
 

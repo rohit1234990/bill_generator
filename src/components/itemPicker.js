@@ -22,6 +22,9 @@ class ItemPicker extends React.Component {
     }
 
     itemAdded = (event) => {
+        if(this.state.item == '' || this.state.qty == '') 
+            return
+
         let bundle = {}
         console.log(this.state.item, this.state.qty)
         bundle['item']  = this.state.item
