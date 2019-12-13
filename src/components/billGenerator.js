@@ -9,8 +9,9 @@ class BillGenerator extends React.Component {
         
         this.items = [{'item' : 'Idli', 'price' : 30},
                       {'item' : 'Dosa', 'price' : 40},
-                      {'item' : 'Tea', 'price' : 10},,
-                      {'item' : 'Poha', 'price' : 20}  
+                      {'item' : 'Tea', 'price' : 10},
+                      {'item' : 'Coffee', 'price' : 20},  
+                      {'item' : 'Samosa', 'price' : 20}  
                      ]
 
         this.state = {
@@ -55,7 +56,7 @@ class BillGenerator extends React.Component {
                         <ItemPicker itemList = {this.items} callbackPurchasedItems = {this.handlePurchasedItems}/>
                     </div>
                     <div className = 'col-5'>
-                        <Taxes taxDiscount = {this.taxDiscount} callbackHandleTaxDiscountValues = {this.handleTaxDiscountValues}/>
+                        <Taxes taxDiscount = {this.state.taxDiscount} callbackHandleTaxDiscountValues = {this.handleTaxDiscountValues}/>
                     </div>
                 </div>
                 <div className='row'>

@@ -6,10 +6,10 @@ class Taxes extends React.Component {
         super(props)
     
         this.state = {
-            gst : this.props.gst,
-            otherTax : this.props.otherTax,
-            discount : this.props.discount,
-            otherDiscount : this.props.otherDiscount
+            gst : this.props.taxDiscount.gst,
+            otherTax : this.props.taxDiscount.otherTax,
+            discount : this.props.taxDiscount.discount,
+            otherDiscount : this.props.taxDiscount.otherDiscount
 
         }
     }
@@ -30,6 +30,7 @@ class Taxes extends React.Component {
         }) 
         console.log('currvalue Post: ', this.state)
         */
+        console.log('currr : ', this.state)
         this.props.callbackHandleTaxDiscountValues(this.state)
     }
 

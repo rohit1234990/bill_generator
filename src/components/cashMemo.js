@@ -48,7 +48,7 @@ class CashMemo extends React.Component {
             <div className='container'>
                 <div className='row'>
                     <div className='col-12'>
-                        <h2>Cash Memo</h2>
+                        <h2>Your Bill</h2>
                     </div>
                     <div className='col-12'>
                         <table className='table'>
